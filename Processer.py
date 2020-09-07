@@ -8,6 +8,8 @@ import YNetScraper as yns
 def url_sorter(name, writer, url, start_year, end_year):
     if yns.BASE_URL in url:
         yns.url_sorter(name, writer, url, start_year, end_year)
+    else:
+        print('This URL is not recognized, quitting..')
 
 
 parser = OptionParser()
