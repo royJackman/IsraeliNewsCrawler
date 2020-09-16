@@ -125,3 +125,4 @@ dmypy.json
 .pyre/
 
 *.xlsx
+*.google-cookie
