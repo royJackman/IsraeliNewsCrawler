@@ -4,9 +4,12 @@ import numpy as np
 import pandas as pd
 
 parser = OptionParser()
-parser.add_option('-b', '--book', dest='book', type='string', default=None, help='Name of the Excel book to write to')
-parser.add_option('-s', '--sheet_name', action='append', dest='sheet_names', default=[], help='Names of sheets to mine for')
-parser.add_option('-u', '--url', action='append', dest='urls', help='Urls to parse')
+parser.add_option('-b', '--book', dest='book', type='string',
+                  default=None, help='Name of the Excel book to write to')
+parser.add_option('-s', '--sheet_name', action='append',
+                  dest='sheet_names', default=[], help='Names of sheets to mine for')
+parser.add_option('-u', '--url', action='append',
+                  dest='urls', help='Urls to parse')
 
 (options, args) = parser.parse_args()
 
@@ -19,7 +22,7 @@ yaniv = yaniv.rename(columns={'Unnamed: 8': 'קטלוג במחקר'})
 
 haaretz = pd.concat([amos, yaniv], join='inner', ignore_index=True)
 
-try: 
+try:
     from googlesearch import search
 except ImportError:
     print('No module names "google" found')
